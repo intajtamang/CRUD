@@ -1,0 +1,52 @@
+<div class="container mx-10 my-10">
+  <h1 class="text-center text-3xl font-bold mb-8">Update post</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-5 border-2 border-gray-600 rounded-lg p-8">
+    <div class="flex items-center">
+      <label for="title" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Title</label>
+      <input type="text" id="title" formControlName="title" [(ngModel)]="post.title" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <!-- Additional form controls for editing -->
+    <div class="flex items-center">
+      <label for="description" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Description</label>
+      <input type="text" id="description" formControlName="description" [(ngModel)]="post.description" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="price" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Price</label>
+      <input type="number" id="price" formControlName="price" [(ngModel)]="post.price" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="stock" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Stock</label>
+      <input type="number" id="stock" formControlName="stock" [(ngModel)]="post.stock" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="brand" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Brand</label>
+      <input type="text" id="brand" formControlName="brand" [(ngModel)]="post.brand" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="category" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Category</label>
+      <input type="text" id="category" formControlName="category" [(ngModel)]="post.category" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="thumbnail" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Thumbnail</label>
+      <input type="text" id="thumbnail" formControlName="thumbnail" [(ngModel)]="post.thumbnail" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="images" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Images</label>
+      <input type="text" id="images" formControlName="images" [(ngModel)]="post.images" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="discountPercentage" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Discount Percentage</label>
+      <input type="number" id="discountPercentage" formControlName="discountPercentage" [(ngModel)]="post.discountPercentage" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex items-center">
+      <label for="rating" class="bg-blue-400 h-7 w-48 flex items-center justify-center rounded-tl-lg rounded-bl-lg text-white">Rating</label>
+      <input type="number" id="rating" formControlName="rating" [(ngModel)]="post.rating" class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg" />
+    </div>
+    <div class="flex justify-around mt-4">
+      <button (click)="deletePost(post.id)" type="button" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700">Delete</button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700" type="submit" [disabled]="!form.valid">Update post</button>
+      <a href="#" routerLinkActive="/post/index" class="bg-[#6B7280] text-white px-4 py-2 rounded-lg">Back</a>
+    </div>
+  </form>
+</div>
