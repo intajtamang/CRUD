@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostService } from '../post.service';
-import { Post } from '../post';
+import { Post, ProductObject } from '../post';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -35,8 +35,9 @@ export class CreateComponent implements OnInit {
       images: new FormControl([])
     });
 
-    this.loadPosts(); // Load posts on component initialization
-  }
+    this.loadPosts();
+    }
+
 
   get f() {
     return this.form.controls;
@@ -58,23 +59,31 @@ export class CreateComponent implements OnInit {
         images: this.form.value.images
       };
 
-      this.postService.create(postData).subscribe((createdPost: Post) => {
 
-        console.log(createdPost)
-        // this.posts = (createdPost); // Add the newly created post to the beginning of the array
-        console.log(this.posts)
-        this.totalItems++; // Increment totalItems
-        alert('Post Created Successfully!');
-        this.router.navigateByUrl('/post/index');
-      });
+      this.createPost(postData);
+
     }
   }
 
-  // Method to load posts
   loadPosts() {
-    this.postService.getPosts().subscribe((data: Post[]) => {
-      this.posts = data;
+
+    this.postService.getAll().subscribe((data: ProductObject) => {
+      this.posts = data.products;
     });
+
+
+  }
+
+  createPost(newPost: Post){
+        console.log("Here it goes:")
+        console.log(this.posts)
+        console.log(newPost)
+        this.posts.unshift(newPost)
+        console.log("Here it goes new one:")
+        console.log(this.posts)
+  }
+
+  updateTotal(){
+          
   }
 }
- ```
