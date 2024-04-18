@@ -1,178 +1,182 @@
-<div class="container mx-auto bg-gray-100 rounded-lg shadow-lg p-8">
+<div class="container mx-auto bg-gray-200 shadow-lg p-8">
   <h1 class="text-center text-3xl font-bold mb-8">Create New Post</h1>
   <a
     href="#"
-    routerLink="/post/index"
+    routerLink="/post"
     class="bg-gray-800 text-white px-4 py-2 rounded inline-block mb-4 hover:bg-gray-700"
     >Back</a
   >
 
   <form [formGroup]="form" (ngSubmit)="submit()" class="max-w-md mx-auto">
-    <div class="mb-4 my-5">
-      <label for="title" class="block mb-2">Title</label>
-      <input
-        type="text"
-        id="title"
-        formControlName="title"
-        class="form-input w-full"
-      />
-      <div
-        *ngIf="f['title'].touched && f['title'].invalid"
-        class="text-red-500 text-sm mt-1"
-      >
-        <div *ngIf="f['title'].errors && f['title'].errors['required']">
-          Title is required.
-        </div>
-      </div>
-    </div>
-    <div class="mb-4">
-      <label for="description" class="block mb-2">Description</label>
-      <textarea
-        id="description"
-        formControlName="description"
-        class="form-textarea w-full"
-        rows="4"
-      ></textarea>
-      <div
-        *ngIf="f['description'].touched && f['description'].invalid"
-        class="text-red-500 text-sm mt-1"
-      >
+    <div class="grid grid-cols-1 gap-4">
+      <div class="mb-4 my-5 flex justify-between">
+        <label for="title" class="block mb-2 w-24">Title</label>
+        <input
+          type="text"
+          id="title"
+          formControlName="title"
+          class="form-input w-full"
+        />
         <div
-          *ngIf="f['description'].errors && f['description'].errors['required']"
+          *ngIf="f['title'].touched && f['title'].invalid"
+          class="text-red-500 text-sm mt-1"
         >
-          Description is required.
+          <div *ngIf="f['title'].errors && f['title'].errors['required']">
+            Title is required.
+          </div>
         </div>
       </div>
-    </div>
-    <div class="mb-4">
-      <label for="price" class="block mb-2">Price</label>
-      <input
-        type="number"
-        id="price"
-        formControlName="price"
-        class="form-input w-full"
-      />
-      <div
-        *ngIf="f['price'].touched && f['price'].invalid"
-        class="text-red-500 text-sm mt-1"
-      >
-        <div *ngIf="f['price'].errors && f['price'].errors['required']">
-          Price is required.
-        </div>
-        <div *ngIf="f['price'].errors && f['price'].errors['min']">
-          Price must be greater than or equal to 0.
+      <div class="mb-4 flex justify-between">
+        <label for="description" class="block mb-2 w-24">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          class="form-textarea w-full"
+          rows="4"
+        ></textarea>
+        <div
+          *ngIf="f['description'].touched && f['description'].invalid"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div
+            *ngIf="
+              f['description'].errors && f['description'].errors['required']
+            "
+          >
+            Description is required.
+          </div>
         </div>
       </div>
-    </div>
-    <div class="mb-4">
-      <label for="discountPercentage" class="block mb-2"
-        >Discount Percentage</label
-      >
-      <input
-        type="number"
-        id="discountPercentage"
-        formControlName="discountPercentage"
-        class="form-input w-full"
-      />
-      <div
-        *ngIf="
-          f['discountPercentage'].touched && f['discountPercentage'].invalid
-        "
-        class="text-red-500 text-sm mt-1"
-      >
+      <div class="mb-4 flex justify-between">
+        <label for="price" class="block mb-2 w-24">Price</label>
+        <input
+          type="number"
+          id="price"
+          formControlName="price"
+          class="form-input w-full"
+        />
+        <div
+          *ngIf="f['price'].touched && f['price'].invalid"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div *ngIf="f['price'].errors && f['price'].errors['required']">
+            Price is required.
+          </div>
+          <div *ngIf="f['price'].errors && f['price'].errors['min']">
+            Price must be greater than or equal to 0.
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 flex justify-between">
+        <label for="discountPercentage" class="block mb-2 w-24"
+          >Discount Percentage</label
+        >
+        <input
+          type="number"
+          id="discountPercentage"
+          formControlName="discountPercentage"
+          class="form-input w-full"
+        />
         <div
           *ngIf="
-            f['discountPercentage'].errors &&
-            f['discountPercentage'].errors['required']
+            f['discountPercentage'].touched && f['discountPercentage'].invalid
           "
+          class="text-red-500 text-sm mt-1"
         >
-          Discount Percentage is required.
-        </div>
-        <div
-          *ngIf="
-            f['discountPercentage'].errors &&
-            f['discountPercentage'].errors['min']
-          "
-        >
-          Discount Percentage must be greater than or equal to 0.
-        </div>
-        <div
-          *ngIf="
-            f['discountPercentage'].errors &&
-            f['discountPercentage'].errors['max']
-          "
-        >
-          Discount Percentage must be less than or equal to 100.
+          <div
+            *ngIf="
+              f['discountPercentage'].errors &&
+              f['discountPercentage'].errors['required']
+            "
+          >
+            Discount Percentage is required.
+          </div>
+          <div
+            *ngIf="
+              f['discountPercentage'].errors &&
+              f['discountPercentage'].errors['min']
+            "
+          >
+            Discount Percentage must be greater than or equal to 0.
+          </div>
+          <div
+            *ngIf="
+              f['discountPercentage'].errors &&
+              f['discountPercentage'].errors['max']
+            "
+          >
+            Discount Percentage must be less than or equal to 100.
+          </div>
         </div>
       </div>
-    </div>
-    <div class="mb-4">
-      <label for="rating" class="block mb-2">Rating</label>
-      <input
-        type="number"
-        id="rating"
-        formControlName="rating"
-        class="form-input w-full"
-      />
-      <div
-        *ngIf="f['rating'].touched && f['rating'].invalid"
-        class="text-red-500 text-sm mt-1"
-      >
-        <div *ngIf="f['rating'].errors && f['rating'].errors['required']">
-          Rating is required.
-        </div>
-        <div *ngIf="f['rating'].errors && f['rating'].errors['min']">
-          Rating must be greater than or equal to 0.
-        </div>
-        <div *ngIf="f['rating'].errors && f['rating'].errors['max']">
-          Rating must be less than or equal to 5.
+      <div class="mb-4 flex justify-between">
+        <label for="rating" class="block mb-2 w-24">Rating</label>
+        <input
+          type="number"
+          id="rating"
+          formControlName="rating"
+          class="form-input w-full"
+        />
+        <div
+          *ngIf="f['rating'].touched && f['rating'].invalid"
+          class="text-red-500 text-sm mt-1"
+        >
+          <div *ngIf="f['rating'].errors && f['rating'].errors['required']">
+            Rating is required.
+          </div>
+          <div *ngIf="f['rating'].errors && f['rating'].errors['min']">
+            Rating must be greater than or equal to 0.
+          </div>
+          <div *ngIf="f['rating'].errors && f['rating'].errors['max']">
+            Rating must be less than or equal to 5.
+          </div>
         </div>
       </div>
-    </div>
-    <div class="mb-4">
-      <label for="stock" class="block mb-2">Stock</label>
-      <input
-        type="number"
-        id="stock"
-        formControlName="stock"
-        class="form-input w-full"
-      />
-    </div>
-    <div class="mb-4">
-      <label for="brand" class="block mb-2">Brand</label>
-      <input
-        type="text"
-        id="brand"
-        formControlName="brand"
-        class="form-input w-full"
-      />
-    </div>
-    <div class="mb-4">
-      <label for="category" class="block mb-2">Category</label>
-      <input
-        type="text"
-        id="category"
-        formControlName="category"
-        class="form-input w-full"
-      />
-    </div>
-    <div class="mb-4">
-      <label for="thumbnail" class="block mb-2">Thumbnail</label>
-      <input
-        type="text"
-        id="thumbnail"
-        formControlName="thumbnail"
-        class="form-input w-full"
-      />
-    </div>
-    <div class="mb-4">
-      <label for="images" class="block mb-2">Images</label>
-      <input
-        type="text"
-        id="images"
-        formControlName="images"
-        class="form-input w-full"
-      />
+      <div class="mb-4 flex justify-between">
+        <label for="stock" class="block mb-2 w-24">Stock</label>
+        <input
+          type="number"
+          id="stock"
+          formControlName="stock"
+          class="form-input w-full"
+        />
+      </div>
+      <div class="mb-4 flex justify-between">
+        <label for="brand" class="block mb-2 w-24">Brand</label>
+        <input
+          type="text"
+          id="brand"
+          formControlName="brand"
+          class="form-input w-full"
+        />
+      </div>
+      <div class="mb-4 flex justify-between">
+        <label for="category" class="block mb-2 w-24">Category</label>
+        <input
+          type="text"
+          id="category"
+          formControlName="category"
+          class="form-input w-full"
+        />
+      </div>
+      <div class="mb-4 flex justify-between">
+        <label for="thumbnail" class="block mb-2 w-24">Thumbnail</label>
+        <input
+          type="file"
+          id="thumbnail"
+          formControlName="thumbnail"
+          class="form-input w-full"
+        />
+      </div>
+      <div class="mb-4 flex justify-between">
+        <label for="images" class="block mb-2 w-24">Images</label>
+        <input
+          type="file"
+          id="images"
+          formControlName="images"
+          class="form-input w-full"
+        />
+      </div>
     </div>
     <!-- End of missing keys/attributes -->
     <button

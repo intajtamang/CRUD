@@ -2,7 +2,6 @@
   <h1 class="text-center text-3xl font-bold mb-8">Product Info</h1>
 
   <form
-    [formGroup]="form"
     (ngSubmit)="submit()"
     class="space-y-5 border-2 border-gray-600 rounded-lg p-8"
   >
@@ -15,7 +14,6 @@
       <input
         type="text"
         id="title"
-        formControlName="title"
         [(ngModel)]="post.title"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -30,7 +28,6 @@
       <input
         type="text"
         id="description"
-        formControlName="description"
         [(ngModel)]="post.description"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -44,7 +41,6 @@
       <input
         type="number"
         id="price"
-        formControlName="price"
         [(ngModel)]="post.price"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -58,7 +54,6 @@
       <input
         type="number"
         id="stock"
-        formControlName="stock"
         [(ngModel)]="post.stock"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -72,7 +67,6 @@
       <input
         type="text"
         id="brand"
-        formControlName="brand"
         [(ngModel)]="post.brand"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -86,7 +80,6 @@
       <input
         type="text"
         id="category"
-        formControlName="category"
         [(ngModel)]="post.category"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -100,7 +93,6 @@
       <input
         type="text"
         id="thumbnail"
-        formControlName="thumbnail"
         [(ngModel)]="post.thumbnail"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -114,7 +106,6 @@
       <input
         type="text"
         id="images"
-        formControlName="images"
         [(ngModel)]="post.images"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -128,7 +119,6 @@
       <input
         type="number"
         id="discountPercentage"
-        formControlName="discountPercentage"
         [(ngModel)]="post.discountPercentage"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />
@@ -142,7 +132,6 @@
       <input
         type="number"
         id="rating"
-        formControlName="rating"
         [(ngModel)]="post.rating"
         class="form-input w-full ml-3 rounded-tr-lg rounded-br-lg"
       />

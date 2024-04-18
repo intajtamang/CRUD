@@ -79,11 +79,11 @@ export class CreateComponent implements OnInit {
   }
 
   createPost(newPost: Post){
-        console.log("Here it goes:")
-        console.log(this.posts)
+        // console.log("Here it goes:")
+        // console.log(this.posts)
         console.log(newPost)
         this.posts.unshift(newPost)
-        console.log("Here it goes new one:")
+        // console.log("Here it goes new one:")
         console.log(this.posts)
   }
 
