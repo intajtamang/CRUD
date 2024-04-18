@@ -1,15 +1,17 @@
 export interface Post {
-  id:number;
-  title:string;
+  filter(arg0: (post: any) => boolean): Post;
+  id: number;
+  title: string;
   description: string;
   price: number;
-  stock:number;
-  brand:string;
-  category:string;
-  thumbnail:string;
-  images:string[];
   discountPercentage: number;
-  rating:number;
+  rating: number;
+  stock: number;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: string[];
+  branch: string; // Add branch property here
 }
 
 export interface ProductObject

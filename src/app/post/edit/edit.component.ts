@@ -13,6 +13,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+openDeleteConfirmationModal() {
+throw new Error('Method not implemented.');
+}
+showDeleteModal(arg0: number) {
+throw new Error('Method not implemented.');
+}
   id!: number;
   post!: Post;
   form!: FormGroup;
@@ -69,7 +75,11 @@ export class EditComponent implements OnInit {
         brand: this.form.value.brand,
         category: this.form.value.category,
         thumbnail: this.form.value.thumbnail,
-        images: this.form.value.images
+        images: this.form.value.images,
+        filter: function (arg0: (post: any) => boolean): Post {
+          throw new Error('Function not implemented.');
+        },
+        branch: ''
       };
 
       console.log(postData);

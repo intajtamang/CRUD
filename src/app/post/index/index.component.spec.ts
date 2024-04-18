@@ -11,7 +11,7 @@ describe('IndexComponent', () => {
       imports: [IndexComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(IndexComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

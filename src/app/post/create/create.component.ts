@@ -56,7 +56,11 @@ export class CreateComponent implements OnInit {
         brand: this.form.value.brand,
         category: this.form.value.category,
         thumbnail: this.form.value.thumbnail,
-        images: this.form.value.images
+        images: this.form.value.images,
+        branch: this.form.value.branch,
+        filter: function (arg0: (post: any) => boolean): Post {
+          throw new Error('Function not implemented.');
+        }
       };
 
 
@@ -83,7 +87,4 @@ export class CreateComponent implements OnInit {
         console.log(this.posts)
   }
 
-  updateTotal(){
-          
-  }
 }

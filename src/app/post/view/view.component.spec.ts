@@ -11,7 +11,7 @@ describe('ViewComponent', () => {
       imports: [ViewComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

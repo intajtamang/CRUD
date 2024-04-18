@@ -11,7 +11,8 @@ import { AppComponent } from '../app.component';
   declarations: [],
   providers: [PostService], // Ensure that PostService is provided
   imports: [
-    CommonModule,BrowserModule, HttpClientModule
+    CommonModule,BrowserModule, HttpClientModule,
   ]
+
 })
 export class PostModule { }
